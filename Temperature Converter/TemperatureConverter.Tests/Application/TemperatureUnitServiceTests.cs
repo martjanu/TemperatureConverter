@@ -1,7 +1,6 @@
 ﻿using TemperaturConverter.Application.Services;
 using TemperaturConverter.Domain.Interfaces;
 using TemperaturConverter.Domain.Models;
-using Xunit;
 
 namespace TemperaturConverter.Tests.Application;
 

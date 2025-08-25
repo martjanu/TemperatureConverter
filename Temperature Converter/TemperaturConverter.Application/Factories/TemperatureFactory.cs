@@ -1,12 +1,12 @@
 ﻿using TemperaturConverter.Domain.Interfaces;
 using TemperaturConverter.Application.Services;
-using TemperaturConverter.Domain.TemperatureUnitRepositories;
+using TemperaturConverter.Application.Repositories;
 using TemperaturConverter.Domain.Validators;
 using TemperatureConverter.UI;
 
 namespace TemperaturConverter.Application.Factories;
 
-public class TemperatureFactory
+public class TemperatureFactory : ITemperatureFactory
 {
     public static ITemperatureService CreateService()
     {
@@ -23,7 +23,7 @@ public class TemperatureFactory
         return new TemperatureValidator();
     }
 
-    public static IInteraction CreateITeraction()
+    public static IInteraction CreateInteraction()
     {
         return new ConsoleAction();
     }

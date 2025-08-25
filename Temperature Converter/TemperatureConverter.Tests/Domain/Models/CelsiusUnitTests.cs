@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Xunit;
-using TemperaturConverter.Domain.Models;
+﻿using TemperaturConverter.Domain.Models;
 
 namespace TemperatureConverter.Tests.Domain.Models;
 

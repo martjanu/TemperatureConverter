@@ -1,6 +1,4 @@
-﻿using System.IO;
-using TemperatureConverter.UI;
-using Xunit;
+﻿using TemperatureConverter.UI;
 
 namespace TemperaturConverter.Tests.UI;
 

@@ -1,5 +1,4 @@
 ﻿using TemperaturConverter.Domain.Models;
-using Xunit;
 
 namespace TemperatureConverter.Tests.Domain.Models;
 

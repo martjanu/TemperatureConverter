@@ -5,7 +5,7 @@ using TemperatureConverter.UI;
 
 var service = TemperatureFactory.CreateService();
 var validator = TemperatureFactory.CreateValidator();
-var clientIteraction = TemperatureFactory.CreateITeraction();
+var clientInteraction = TemperatureFactory.CreateInteraction();
 
 var repository = TemperatureFactory.CreateRepository(
     new Dictionary<string, ITemperatureUnit>(StringComparer.OrdinalIgnoreCase)
@@ -18,12 +18,12 @@ var repository = TemperatureFactory.CreateRepository(
 
 try
 {
-    clientIteraction.WriteOutput("Enter temperature unit to convert from (Celsius, Fahrenheit, Bananas, Kelvin):");
-    var fromUnit = repository.GetTemperatureUnit(clientIteraction.ReadInput()) ?? throw new ArgumentException("Invalid temperature unit provided.");
-    clientIteraction.WriteOutput("Enter temperature unit to convert to (Celsius, Fahrenheit, Bananas, Kelvin):");
-    var toUnit = repository.GetTemperatureUnit(clientIteraction.ReadInput()) ?? throw new ArgumentException("Invalid temperature unit provided.");
-    clientIteraction.WriteOutput("Enter temperature value to convert:");
-    var inputValue = validator.TryParseTemperature(clientIteraction.ReadInput()) ?? throw new ArgumentException("Invalid temperature value provided.");
+    clientInteraction.WriteOutput("Enter temperature unit to convert from (Celsius, Fahrenheit, Bananas, Kelvin):");
+    var fromUnit = repository.GetTemperatureUnit(clientInteraction.ReadInput()) ?? throw new ArgumentException("Invalid temperature unit provided.");
+    clientInteraction.WriteOutput("Enter temperature unit to convert to (Celsius, Fahrenheit, Bananas, Kelvin):");
+    var toUnit = repository.GetTemperatureUnit(clientInteraction.ReadInput()) ?? throw new ArgumentException("Invalid temperature unit provided.");
+    clientInteraction.WriteOutput("Enter temperature value to convert:");
+    var inputValue = validator.TryParseTemperature(clientInteraction.ReadInput()) ?? throw new ArgumentException("Invalid temperature value provided.");
 
     var result = service.Convert(
         fromUnit,
@@ -31,11 +31,11 @@ try
         inputValue
     );
 
-    clientIteraction.WriteOutput($"{result}");
+    clientInteraction.WriteOutput($"{result}");
 }
 catch (ArgumentException ex)
 {
-    clientIteraction.WriteOutput($"Input error: {ex.Message}");
+    clientInteraction.WriteOutput($"Input error: {ex.Message}");
 }
 
  

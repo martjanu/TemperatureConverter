@@ -1,6 +1,4 @@
-﻿using System;
-using TemperaturConverter.Domain.Validators;
-using Xunit;
+﻿using TemperaturConverter.Domain.Validators;
 
 namespace TemperaturConverter.Tests.Validators;
 

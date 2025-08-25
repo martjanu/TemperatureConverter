@@ -1,7 +1,7 @@
 ﻿using TemperaturConverter.Domain.Interfaces;
 using TemperaturConverter.Domain.Models;
 
-namespace TemperaturConverter.Domain.TemperatureUnitRepositories;
+namespace TemperaturConverter.Application.Repositories;
 
 public class TemperatureUnitRepository : ITemperatureUnitRepository
 {

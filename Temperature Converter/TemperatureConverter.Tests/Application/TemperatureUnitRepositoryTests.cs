@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using TemperaturConverter.Domain.Interfaces;
+﻿using TemperaturConverter.Domain.Interfaces;
 using TemperaturConverter.Domain.Models;
-using TemperaturConverter.Domain.TemperatureUnitRepositories;
-using Xunit;
+using TemperaturConverter.Application.Repositories;
 
-namespace TemperaturConverter.Tests;
+namespace TemperatureConverter.Tests.Application;
 
 public class TemperatureUnitRepositoryTests
 {
