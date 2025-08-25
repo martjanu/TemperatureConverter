@@ -1,0 +1,17 @@
+﻿using TemperaturConverter.Domain.Interfaces;
+
+namespace TemperaturConverter.Application.Services;
+
+public class TemperatureUnitService : ITemperatureService
+{
+    public decimal Convert(ITemperatureUnit fromUnit, ITemperatureUnit toUnit, decimal value)
+    {
+        if (fromUnit is null)
+            throw new ArgumentNullException(nameof(fromUnit));
+        if (toUnit is null)
+            throw new ArgumentNullException(nameof(toUnit));
+
+        var kelvinValue = fromUnit.ToKelvin(value);
+        return toUnit.FromKelvin(kelvinValue);
+    }
+}
