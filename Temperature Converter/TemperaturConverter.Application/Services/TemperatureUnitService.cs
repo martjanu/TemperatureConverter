@@ -6,7 +6,12 @@ public class TemperatureUnitService : ITemperatureService
 {
     public decimal Convert(ITemperatureUnit fromUnit, ITemperatureUnit toUnit, decimal value)
     {
-        var amount = fromUnit.ToKelvin(value);
-        return toUnit.FromKelvin(amount);
+        if (fromUnit is null)
+            throw new ArgumentNullException(nameof(fromUnit));
+        if (toUnit is null)
+            throw new ArgumentNullException(nameof(toUnit));
+
+        var kelvinValue = fromUnit.ToKelvin(value);
+        return toUnit.FromKelvin(kelvinValue);
     }
 }
