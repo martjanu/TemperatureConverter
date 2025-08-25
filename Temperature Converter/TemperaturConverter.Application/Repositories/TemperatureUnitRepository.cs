@@ -3,7 +3,7 @@ using TemperaturConverter.Domain.Models;
 
 namespace TemperaturConverter.Application.Repositories;
 
-public class TemperatureUnitRepository : ITemperatureUnitRepository
+public class TemperatureUnitRepository : ITemperatureRepository
 {
     private readonly Dictionary<string, ITemperatureUnit> _temperatureUnits;
     public TemperatureUnitRepository(Dictionary<string, ITemperatureUnit>? temperatureUnits)

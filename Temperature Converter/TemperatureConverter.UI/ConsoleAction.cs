@@ -2,7 +2,7 @@
 
 namespace TemperatureConverter.UI;
 
-public class ConsoleAction : IInteraction
+public class ConsoleAction : IClientInteraction
 {
     public string ReadInput()
     {

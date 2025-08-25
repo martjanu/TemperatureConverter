@@ -1,7 +1,7 @@
-﻿using TemperaturConverter.Application.Factories;
+﻿using TemperaturConverter.Application.Controllers;
+using TemperaturConverter.Application.Factories;
 using TemperaturConverter.Domain.Interfaces;
 using TemperaturConverter.Domain.Models;
-using TemperatureConverter.UI;
 
 var service = TemperatureFactory.CreateService();
 var validator = TemperatureFactory.CreateValidator();
@@ -16,26 +16,10 @@ var repository = TemperatureFactory.CreateRepository(
         ["kelvin"] = new KelvinUnit()
     });
 
-try
-{
-    clientInteraction.WriteOutput("Enter temperature unit to convert from (Celsius, Fahrenheit, Bananas, Kelvin):");
-    var fromUnit = repository.GetTemperatureUnit(clientInteraction.ReadInput()) ?? throw new ArgumentException("Invalid temperature unit provided.");
-    clientInteraction.WriteOutput("Enter temperature unit to convert to (Celsius, Fahrenheit, Bananas, Kelvin):");
-    var toUnit = repository.GetTemperatureUnit(clientInteraction.ReadInput()) ?? throw new ArgumentException("Invalid temperature unit provided.");
-    clientInteraction.WriteOutput("Enter temperature value to convert:");
-    var inputValue = validator.TryParseTemperature(clientInteraction.ReadInput()) ?? throw new ArgumentException("Invalid temperature value provided.");
+var controller = new TemperatureConversionController(
+    service,
+    validator,
+    clientInteraction,
+    repository);
 
-    var result = service.Convert(
-        fromUnit,
-        toUnit,
-        inputValue
-    );
-
-    clientInteraction.WriteOutput($"{result}");
-}
-catch (ArgumentException ex)
-{
-    clientInteraction.WriteOutput($"Input error: {ex.Message}");
-}
-
- 
+controller.Run();

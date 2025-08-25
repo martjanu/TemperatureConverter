@@ -1,6 +1,6 @@
 ﻿namespace TemperaturConverter.Domain.Interfaces;
 
-public interface IValidator
+public interface ITemperatureValidator
 {
     public decimal? TryParseTemperature(string input);
 }

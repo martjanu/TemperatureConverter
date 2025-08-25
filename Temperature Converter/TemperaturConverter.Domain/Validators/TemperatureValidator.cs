@@ -3,7 +3,7 @@ using TemperaturConverter.Domain.Interfaces;
 
 namespace TemperaturConverter.Domain.Validators;
 
-public class TemperatureValidator : IValidator
+public class TemperatureValidator : ITemperatureValidator
 {
     public decimal? TryParseTemperature(string input)
     {

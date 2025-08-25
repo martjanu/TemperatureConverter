@@ -13,17 +13,17 @@ public class TemperatureFactory : ITemperatureFactory
         return new TemperatureUnitService();
     }
 
-    public static ITemperatureUnitRepository CreateRepository(Dictionary<string, ITemperatureUnit> units)
+    public static ITemperatureRepository CreateRepository(Dictionary<string, ITemperatureUnit> units)
     {
         return new TemperatureUnitRepository(units);
     }
 
-    public static IValidator CreateValidator()
+    public static ITemperatureValidator CreateValidator()
     {
         return new TemperatureValidator();
     }
 
-    public static IInteraction CreateInteraction()
+    public static IClientInteraction CreateInteraction()
     {
         return new ConsoleAction();
     }

@@ -2,8 +2,8 @@
 
 public interface ITemperatureFactory
 {
-    static abstract IInteraction CreateInteraction();
-    static abstract ITemperatureUnitRepository CreateRepository(Dictionary<string, ITemperatureUnit> units);
+    static abstract IClientInteraction CreateInteraction();
+    static abstract ITemperatureRepository CreateRepository(Dictionary<string, ITemperatureUnit> units);
     static abstract ITemperatureService CreateService();
-    static abstract IValidator CreateValidator();
+    static abstract ITemperatureValidator CreateValidator();
 }
