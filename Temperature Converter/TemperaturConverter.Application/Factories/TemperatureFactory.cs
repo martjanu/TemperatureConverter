@@ -6,25 +6,14 @@ using TemperatureConverter.UI;
 
 namespace TemperaturConverter.Application.Factories;
 
-public class TemperatureFactory : ITemperatureFactory
+public static class TemperatureFactory
 {
-    public static ITemperatureService CreateService()
-    {
-        return new TemperatureUnitService();
-    }
+    public static ITemperatureService CreateService() => new TemperatureUnitService();
 
-    public static ITemperatureRepository CreateRepository(Dictionary<string, ITemperatureUnit> units)
-    {
-        return new TemperatureUnitRepository(units);
-    }
+    public static ITemperatureRepository CreateRepository(Dictionary<string, ITemperatureUnit>? units = null)
+        => new TemperatureUnitRepository(units ?? new Dictionary<string, ITemperatureUnit>());
 
-    public static ITemperatureValidator CreateValidator()
-    {
-        return new TemperatureValidator();
-    }
+    public static ITemperatureValidator CreateValidator() => new TemperatureValidator();
 
-    public static IClientInteraction CreateInteraction()
-    {
-        return new ConsoleAction();
-    }
+    public static IClientInteraction CreateInteraction() => new ConsoleAction();
 }
