@@ -16,4 +16,6 @@ public static class TemperatureFactory
     public static ITemperatureValidator CreateValidator() => new TemperatureValidator();
 
     public static IClientInteraction CreateInteraction() => new ConsoleAction();
+
+    public static TemperatureConversionController CreateController() => new TemperatureConversionController();
 }

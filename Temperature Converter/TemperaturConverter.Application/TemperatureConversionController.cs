@@ -1,6 +1,8 @@
-﻿using TemperaturConverter.Domain.Interfaces;
+﻿using TemperaturConverter.Application.Factories;
+using TemperaturConverter.Domain.Interfaces;
+using TemperaturConverter.Domain.Models;
 
-namespace TemperaturConverter.Application.Controllers;
+namespace TemperaturConverter.Application;
 
 public class TemperatureConversionController
 {
@@ -9,16 +11,19 @@ public class TemperatureConversionController
     private readonly IClientInteraction _interaction;
     private readonly ITemperatureRepository _repository;
 
-    public TemperatureConversionController(
-    ITemperatureService service,
-        ITemperatureValidator validator,
-        IClientInteraction interaction,
-        ITemperatureRepository repository)
+    public TemperatureConversionController()
     {
-        _service = service;
-        _validator = validator;
-        _interaction = interaction;
-        _repository = repository;
+        _service = TemperatureFactory.CreateService();
+        _validator = TemperatureFactory.CreateValidator();
+        _interaction = TemperatureFactory.CreateInteraction();
+        _repository = TemperatureFactory.CreateRepository(
+            new Dictionary<string, ITemperatureUnit>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["celsius"] = new CelsiusUnit(),
+                ["fahrenheit"] = new FahrenheitUnit(),
+                ["bananas"] = new BananasUnit(),
+                ["kelvin"] = new KelvinUnit()
+            });
     }
 
     public void Run()
