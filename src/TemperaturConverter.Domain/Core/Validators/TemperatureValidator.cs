@@ -9,7 +9,7 @@ public class TemperatureValidator : ITemperatureValidator
         if (string.IsNullOrWhiteSpace(input))
             return null;
 
-        return double.TryParse(input, NumberStyles.Number, CultureInfo.InvariantCulture, out var value)
+        return double.TryParse(input, out var value)
             ? value
             : null;
     }

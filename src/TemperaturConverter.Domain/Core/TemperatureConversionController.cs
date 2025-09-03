@@ -37,6 +37,7 @@ public class TemperatureConversionController
     {
         try
         {
+            _interaction.WriteOutput(_repository.GetUnitNames());
             var fromUnit = AskForUnit("Enter temperature unit to convert from:");
             var toUnit = AskForUnit("Enter temperature unit to convert to:");
             var value = AskForTemperature("Enter temperature value to convert:");
