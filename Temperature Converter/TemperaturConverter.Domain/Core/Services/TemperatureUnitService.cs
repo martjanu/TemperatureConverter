@@ -1,6 +1,6 @@
 ﻿using TemperaturConverter.Domain.Interfaces;
 
-namespace TemperaturConverter.Application.Services;
+namespace TemperaturConverter.Domain.Core.Services;
 
 public class TemperatureUnitService : ITemperatureService
 {

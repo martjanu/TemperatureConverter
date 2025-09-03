@@ -1,22 +1,29 @@
-﻿using TemperaturConverter.Application.Factories;
+﻿using TemperaturConverter.Domain.Core.Factories;
 using TemperaturConverter.Domain.Interfaces;
 using TemperaturConverter.Domain.Models;
 
-namespace TemperaturConverter.Application;
+namespace TemperaturConverter.Domain.Core;
 
 public class TemperatureConversionController
 {
     private readonly ITemperatureService _service;
     private readonly ITemperatureValidator _validator;
-    private readonly IClientInteraction _interaction;
+    private readonly IUserInteraction _interaction;
     private readonly ITemperatureRepository _repository;
 
     public TemperatureConversionController()
     {
-        _service = TemperatureFactory.CreateService();
-        _validator = TemperatureFactory.CreateValidator();
-        _interaction = TemperatureFactory.CreateInteraction();
-        _repository = TemperatureFactory.CreateRepository(
+        var temperatureServiceFactory = new TemperatureServiceFactory();
+        _service = temperatureServiceFactory.Create();
+
+        var validatorFactory = new TemperatureValidatorFactory();
+        _validator = validatorFactory.Create();
+
+        var interactionFactory = new UserInteractionFactory();
+        _interaction = interactionFactory.Create();
+
+        var repositoryFactory = new TemperatureUnitRepositoryFactory();
+        _repository = repositoryFactory.Create(
             new Dictionary<string, ITemperatureUnit>(StringComparer.OrdinalIgnoreCase)
             {
                 ["celsius"] = new CelsiusUnit(),
@@ -26,7 +33,7 @@ public class TemperatureConversionController
             });
     }
 
-    public void Run()
+    public void Convert()
     {
         try
         {

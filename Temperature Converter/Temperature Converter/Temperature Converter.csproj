@@ -9,9 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TemperaturConverter.Application\TemperaturConverter.Application.csproj" />
     <ProjectReference Include="..\TemperaturConverter.Domain\TemperaturConverter.Domain.csproj" />
-    <ProjectReference Include="..\TemperatureConverter.UI\TemperatureConverter.UI.csproj" />
   </ItemGroup>
 
 </Project>

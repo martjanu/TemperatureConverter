@@ -1,7 +1,7 @@
 ﻿
 namespace TemperaturConverter.Domain.Interfaces;
 
-public interface IClientInteraction
+public interface IUserInteraction
 {
     public  string ReadInput();
     public  void WriteOutput(string message);

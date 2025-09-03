@@ -1,6 +1,6 @@
 ﻿using TemperaturConverter.Domain.Interfaces;
 
-namespace TemperatureConverter.UI;
+namespace TemperaturConverter.Domain.Core.UI;
 
 public class ConsoleAction : IUserInteraction
 {

@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TemperaturConverter.Application\TemperaturConverter.Application.csproj" />
     <ProjectReference Include="..\TemperaturConverter.Domain\TemperaturConverter.Domain.csproj" />
     <ProjectReference Include="..\Temperature Converter\Temperature Converter.csproj" />
   </ItemGroup>
