@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{58A99C31-5BA5-467B-8F67-6559ECAC2E72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureConverter.Tests", "TemperatureConverter.Tests\TemperatureConverter.Tests.csproj", "{B492D34C-1F85-4AA2-AD62-191AF0D814BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{6BE022BD-F2ED-4B4F-A66D-4B3C2A6FBACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BE022BD-F2ED-4B4F-A66D-4B3C2A6FBACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BE022BD-F2ED-4B4F-A66D-4B3C2A6FBACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B492D34C-1F85-4AA2-AD62-191AF0D814BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B492D34C-1F85-4AA2-AD62-191AF0D814BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B492D34C-1F85-4AA2-AD62-191AF0D814BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B492D34C-1F85-4AA2-AD62-191AF0D814BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C88D87D6-97FA-4E0E-A9C7-3C9E794A1E46} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{6BE022BD-F2ED-4B4F-A66D-4B3C2A6FBACD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{B492D34C-1F85-4AA2-AD62-191AF0D814BD} = {58A99C31-5BA5-467B-8F67-6559ECAC2E72}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DF58F2EF-1BD1-4437-8C21-250C7F80127C}
