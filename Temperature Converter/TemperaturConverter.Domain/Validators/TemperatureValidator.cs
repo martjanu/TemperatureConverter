@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using TemperaturConverter.Domain.Interfaces;
+﻿using TemperaturConverter.Domain.Interfaces;
 
 namespace TemperaturConverter.Domain.Validators;
 

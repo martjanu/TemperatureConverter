@@ -37,8 +37,8 @@ public class TemperatureConversionController
     {
         try
         {
-            var fromUnit = AskForUnit("Enter temperature unit to convert from (Celsius, Fahrenheit, Bananas, Kelvin):");
-            var toUnit = AskForUnit("Enter temperature unit to convert to (Celsius, Fahrenheit, Bananas, Kelvin):");
+            var fromUnit = AskForUnit("Enter temperature unit to convert from:");
+            var toUnit = AskForUnit("Enter temperature unit to convert to:");
             var value = AskForTemperature("Enter temperature value to convert:");
 
             var result = _service.Convert(fromUnit, toUnit, value);
