@@ -2,9 +2,9 @@
 
 namespace TemperaturConverter.Domain.Core.Services;
 
-public class TemperatureUnitService : ITemperatureService
+public class TemperatureService : ITemperatureService
 {
-    public decimal Convert(ITemperatureUnit fromUnit, ITemperatureUnit toUnit, decimal value)
+    public double Convert(ITemperatureUnit fromUnit, ITemperatureUnit toUnit, double value)
     {
         if (fromUnit is null)
             throw new ArgumentNullException(nameof(fromUnit));

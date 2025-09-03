@@ -7,13 +7,13 @@ public class CelsiusUnit : ITemperatureUnit
 {
     public string Name { get; } = "Celsius";
 
-    public decimal ToKelvin(decimal value)
+    public double ToKelvin(double value)
     {
-        return value + 273.15m;
+        return value + 273.15;
     }
 
-    public decimal FromKelvin(decimal value)
+    public double FromKelvin(double value)
     {
-        return value - 273.15m;
+        return value - 273.15;
     }
 }

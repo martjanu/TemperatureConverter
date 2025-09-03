@@ -9,7 +9,7 @@ public class TemperatureConversionController
     private readonly ITemperatureService _service;
     private readonly ITemperatureValidator _validator;
     private readonly IUserInteraction _interaction;
-    private readonly ITemperatureRepository _repository;
+    private readonly ITemperatureUnitRepository _repository;
 
     public TemperatureConversionController()
     {
@@ -62,7 +62,7 @@ public class TemperatureConversionController
         return unit;
     }
 
-    private decimal AskForTemperature(string prompt)
+    private double AskForTemperature(string prompt)
     {
         _interaction.WriteOutput(prompt);
         var input = _interaction.ReadInput();

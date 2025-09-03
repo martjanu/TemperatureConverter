@@ -1,7 +1,7 @@
 ﻿
 namespace TemperaturConverter.Domain.Interfaces;
 
-public interface ITemperatureRepository
+public interface ITemperatureUnitRepository
 {
     public ITemperatureUnit? GetTemperatureUnit(string name);
 }

@@ -7,13 +7,13 @@ public class BananasUnit : ITemperatureUnit
 {
     public string Name { get; } = "Bananas";
 
-    public decimal ToKelvin(decimal value)
+    public double ToKelvin(double value)
     {
-        return value * 30m;
+        return value * 30;
     }
 
-    public decimal FromKelvin(decimal value)
+    public double FromKelvin(double value)
     {
-        return value / 30m;
+        return value / 30;
     }
 }

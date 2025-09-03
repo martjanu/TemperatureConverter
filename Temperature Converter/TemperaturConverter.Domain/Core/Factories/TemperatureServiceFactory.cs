@@ -5,5 +5,5 @@ namespace TemperaturConverter.Domain.Core.Factories;
 
 public class TemperatureServiceFactory
 {
-    public ITemperatureService Create() => new TemperatureUnitService();
+    public ITemperatureService Create() => new TemperatureService();
 }

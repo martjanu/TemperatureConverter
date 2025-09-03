@@ -2,5 +2,5 @@
 
 public interface ITemperatureValidator
 {
-    public decimal? TryParseTemperature(string input);
+    public double? TryParseTemperature(string input);
 }
