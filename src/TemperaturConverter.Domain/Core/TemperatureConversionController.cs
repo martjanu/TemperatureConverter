@@ -11,26 +11,16 @@ public class TemperatureConversionController
     private readonly IUserInteraction _interaction;
     private readonly ITemperatureUnitRepository _repository;
 
-    public TemperatureConversionController()
+    public TemperatureConversionController(
+        ITemperatureService service, 
+        ITemperatureValidator validator,
+        IUserInteraction interaction,
+        ITemperatureUnitRepository repository)
     {
-        var temperatureServiceFactory = new TemperatureServiceFactory();
-        _service = temperatureServiceFactory.Create();
-
-        var validatorFactory = new TemperatureValidatorFactory();
-        _validator = validatorFactory.Create();
-
-        var interactionFactory = new UserInteractionFactory();
-        _interaction = interactionFactory.Create();
-
-        var repositoryFactory = new TemperatureUnitRepositoryFactory();
-        _repository = repositoryFactory.Create(
-            new Dictionary<string, ITemperatureUnit>(StringComparer.OrdinalIgnoreCase)
-            {
-                ["celsius"] = new CelsiusUnit(),
-                ["fahrenheit"] = new FahrenheitUnit(),
-                ["bananas"] = new BananasUnit(),
-                ["kelvin"] = new KelvinUnit()
-            });
+        _interaction = interaction;
+        _service = service;
+        _validator = validator;
+        _repository = repository;
     }
 
     public void Convert()
