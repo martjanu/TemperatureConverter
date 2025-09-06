@@ -11,9 +11,9 @@ public class TemperatureUnitRepository : ITemperatureUnitRepository
         _temperatureUnits = temperatureUnits ?? new Dictionary<string, ITemperatureUnit>(StringComparer.OrdinalIgnoreCase);
     }
 
-    public ITemperatureUnit? GetTemperatureUnit(string name)
+    public ITemperatureUnit? GetUnit(string name)
     {
-        _temperatureUnits.TryGetValue(name, out var unit);
+        _temperatureUnits.TryGetValue(name.ToLower(), out var unit);
         return unit;
     }
 

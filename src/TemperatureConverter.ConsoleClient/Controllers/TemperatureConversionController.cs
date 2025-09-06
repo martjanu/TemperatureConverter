@@ -2,15 +2,15 @@
 
 namespace TemperatureConverter.Controllers;
 
-public class TemperatureConversionConsoleController
+public class TemperatureConversionController : ITemperatureConversionController
 {
     private readonly ITemperatureService _service;
     private readonly ITemperatureValidator _validator;
     private readonly IUserInteraction _interaction;
     private readonly ITemperatureUnitRepository _repository;
 
-    public TemperatureConversionConsoleController(
-        ITemperatureService service, 
+    public TemperatureConversionController(
+        ITemperatureService service,
         ITemperatureValidator validator,
         IUserInteraction interaction,
         ITemperatureUnitRepository repository)
@@ -43,7 +43,7 @@ public class TemperatureConversionConsoleController
     {
         _interaction.WriteOutput(prompt);
         var input = _interaction.ReadInput();
-        var unit = _repository.GetTemperatureUnit(input);
+        var unit = _repository.GetUnit(input);
 
         if (unit == null)
             throw new ArgumentException("Invalid temperature unit provided.");

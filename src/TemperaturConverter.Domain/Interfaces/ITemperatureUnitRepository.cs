@@ -3,6 +3,6 @@ namespace TemperaturConverter.Domain.Interfaces;
 
 public interface ITemperatureUnitRepository
 {
-    public ITemperatureUnit? GetTemperatureUnit(string name);
+    public ITemperatureUnit? GetUnit(string name);
     public string GetUnitNames();
 }

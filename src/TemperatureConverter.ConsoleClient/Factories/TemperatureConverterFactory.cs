@@ -7,7 +7,7 @@ namespace TemperaturConverter.Factories;
 
 public class TemperatureConverterControllerFactory
 {
-    public TemperatureConversionConsoleController Create()
+    public TemperatureConversionController Create()
     {
         var temperatureServiceFactory = new TemperatureServiceFactory();
         var service = temperatureServiceFactory.Create();
@@ -28,6 +28,6 @@ public class TemperatureConverterControllerFactory
                 ["kelvin"] = new KelvinUnit()
             });
 
-        return new TemperatureConversionConsoleController(service, validator, interaction, repository);
+        return new TemperatureConversionController(service, validator, interaction, repository);
     }
 }
