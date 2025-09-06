@@ -1,17 +1,22 @@
-﻿using TemperaturConverter.Domain.Interfaces;
+﻿using TemperaturConverter.Domain.Core.Factories;
+using TemperaturConverter.Domain.Interfaces;
 using TemperaturConverter.Domain.Models;
+using TemperatureConverter.Controllers;
 
-namespace TemperaturConverter.Domain.Core.Factories;
+namespace TemperaturConverter.Factories;
 
 public class TemperatureConverterControllerFactory
 {
-    public TemperatureConversionAPIController Create()
+    public TemperatureConversionConsoleController Create()
     {
         var temperatureServiceFactory = new TemperatureServiceFactory();
         var service = temperatureServiceFactory.Create();
 
         var validatorFactory = new TemperatureValidatorFactory();
         var validator = validatorFactory.Create();
+
+        var interactionFactory = new UserInteractionFactory();
+        var interaction = interactionFactory.Create();
 
         var repositoryFactory = new TemperatureUnitRepositoryFactory();
         var repository = repositoryFactory.Create(
@@ -23,6 +28,6 @@ public class TemperatureConverterControllerFactory
                 ["kelvin"] = new KelvinUnit()
             });
 
-        return new TemperatureConversionAPIController(service, validator, repository);
+        return new TemperatureConversionConsoleController(service, validator, interaction, repository);
     }
 }

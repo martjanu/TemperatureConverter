@@ -1,17 +1,15 @@
-﻿using TemperaturConverter.Domain.Core.Factories;
-using TemperaturConverter.Domain.Interfaces;
-using TemperaturConverter.Domain.Models;
+﻿using TemperaturConverter.Domain.Interfaces;
 
-namespace TemperaturConverter.Domain.Core;
+namespace TemperatureConverter.Controllers;
 
-public class TemperatureConversionController
+public class TemperatureConversionConsoleController
 {
     private readonly ITemperatureService _service;
     private readonly ITemperatureValidator _validator;
     private readonly IUserInteraction _interaction;
     private readonly ITemperatureUnitRepository _repository;
 
-    public TemperatureConversionController(
+    public TemperatureConversionConsoleController(
         ITemperatureService service, 
         ITemperatureValidator validator,
         IUserInteraction interaction,

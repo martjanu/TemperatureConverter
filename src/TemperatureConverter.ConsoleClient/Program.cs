@@ -1,4 +1,4 @@
-﻿using TemperaturConverter.Domain.Core.Factories;
+﻿using TemperaturConverter.Factories;
 
 var controllerFactory = new TemperatureConverterControllerFactory();
 var controller = controllerFactory.Create();

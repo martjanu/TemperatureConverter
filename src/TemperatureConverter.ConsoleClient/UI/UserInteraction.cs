@@ -1,8 +1,8 @@
 ﻿using TemperaturConverter.Domain.Interfaces;
 
-namespace TemperaturConverter.Domain.Core.UI;
+namespace TemperaturConverter.UI;
 
-public class ConsoleAction : IUserInteraction
+public class UserInteraction : IUserInteraction
 {
     public string ReadInput()
     {
